@@ -3,9 +3,11 @@
 This module is designed to help you understand Templates in CPP.
 
 **Templates**
+
 	- function overloading
 
 **Example 1**
+
 int max(int x, int y)
 {
 	return (x >= y ? x : y); //Ternary operator
@@ -17,6 +19,7 @@ T max(T x, T y)
 }
 
 **Example 2**
+
 	- Example (Before)									- Example (After)
 		template<typename T>								template<typename T> //<class> works too
 		void Swap(int& a, int& b)							void Swap(T& a, T&b) // becomes a generic function
@@ -45,6 +48,7 @@ T max(T x, T y)
 		}
 	
 **Example 3 (class)**
+
 	template<typename T = float> //can set default to a data type
 	class Vertex
 	{
