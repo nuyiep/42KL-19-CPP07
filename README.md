@@ -12,6 +12,7 @@ int max(int x, int y)
 {
 	return (x >= y ? x : y); //Ternary operator
 }
+
 template<typname T>
 T max(T x, T y)
 {
@@ -20,14 +21,14 @@ T max(T x, T y)
 
 **Example 2**
 
-	- Example (Before)								- Example (After)
-	template<typename T>								template<typename T> //<class> works too
-	void Swap(int& a, int& b)							void Swap(T& a, T&b) // becomes a generic function
-	{													{
-		int temp = a;										T temp = a;
-		a = b;												a = b;
-		b = temp;											b = temp;
-	}													}
+	- Example (Before)								
+	template<typename T>								
+	void Swap(int& a, int& b)							
+	{													
+		int temp = a;										
+		a = b;												
+		b = temp;											
+	}													
 	void Swap(char& a, char& b)							
 	{
 		char temp = a;
@@ -45,6 +46,15 @@ T max(T x, T y)
 		cout << c << " - " << d << endl;
 		Swap<char>(c, d);
 		cout << c << " - " << d << endl;
+	}
+
+	(After)
+	template<typename T> 
+	void Swap(T &a, T &b)
+	{
+		T temp = a;
+		a = b;
+		b = temp;
 	}
 	
 **Example 3 (class)**
