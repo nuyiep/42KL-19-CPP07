@@ -20,32 +20,32 @@ T max(T x, T y)
 
 **Example 2**
 
-	- Example (Before)									- Example (After)
-		template<typename T>								template<typename T> //<class> works too
-		void Swap(int& a, int& b)							void Swap(T& a, T&b) // becomes a generic function
-		{													{
-			int temp = a;										T temp = a;
-			a = b;												a = b;
-			b = temp;											b = temp;
-		}													}
-		void Swap(char& a, char& b)							
-		{
-			char temp = a;
-			a = b;
-			b = temp;
-		}
-		int main()											
-		{													
-			int a = 5, b = 7;																
-			cout << a << " - " << b << endl;
-			Swap<int>(a, b); //with or without <int>
-			cout << a << " - " << b << endl;
+	- Example (Before)								- Example (After)
+	template<typename T>								template<typename T> //<class> works too
+	void Swap(int& a, int& b)							void Swap(T& a, T&b) // becomes a generic function
+	{													{
+		int temp = a;										T temp = a;
+		a = b;												a = b;
+		b = temp;											b = temp;
+	}													}
+	void Swap(char& a, char& b)							
+	{
+		char temp = a;
+		a = b;
+		b = temp;
+	}
+	int main()											
+	{													
+		int a = 5, b = 7;																
+		cout << a << " - " << b << endl;
+		Swap<int>(a, b); //with or without <int>
+		cout << a << " - " << b << endl;
 
-			char c = 'c', d = 'd';
-			cout << c << " - " << d << endl;
-			Swap<char>(c, d);
-			cout << c << " - " << d << endl;
-		}
+		char c = 'c', d = 'd';
+		cout << c << " - " << d << endl;
+		Swap<char>(c, d);
+		cout << c << " - " << d << endl;
+	}
 	
 **Example 3 (class)**
 
