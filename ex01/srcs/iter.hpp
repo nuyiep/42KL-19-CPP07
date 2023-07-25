@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:43:42 by plau              #+#    #+#             */
-/*   Updated: 2023/07/24 21:07:22 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/25 14:45:00 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,19 @@
 #include <iostream>
 
 template<typename T>
-void	iter(T *arrayA, int length, void(func)(T &ref, int length))
+void	iter(T *arrayA, int length, void(func)(T &ref))
 {
-	// std::cout << arrayA[0] << std::endl;
-	// std::cout << &arrayA << std::endl;
-	// std::cout << *arrayA << std::endl;
-	// std::cout << *arrayA[0] << std::endl;
-	// std::cout << length << std::endl;
 	if (arrayA == NULL || length <= 0 || func == NULL)
 		return ;
 	for (int i = 0; i < length; i++)
-		func(arrayA[i], length);
+		func(arrayA[i]);
 }
 
-template<typename T>
-void	print(T arrayA, int length)
+template< typename T >
+void print( T const  x) 
 {
-	std::cout << "arrayA: "<< arrayA << std::endl;
-	std::cout << "*arrayA: " << arrayA << std::endl;
-	std::cout << "sizeof(*arrayA): "<< sizeof(arrayA) << std::endl;
-	std::cout << "sizeof(*arrayA[0]): "<< sizeof(arrayA[0]) << std::endl;
-
-	// length = sizeof(arrayA) / sizeof(arrayA[0]);
-	// length = sizeof(arrayA) / sizeof(arrayA[0]);
-	
-	/* Printing for testing */
-	std::cout << "length: "<< length << std::endl;
+	std::cout << x << std::endl;
+	return; 
 }
+
 #endif
