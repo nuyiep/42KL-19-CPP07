@@ -6,11 +6,11 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/21 15:33:58 by plau              #+#    #+#              #
-#    Updated: 2023/07/25 13:38:25 by plau             ###   ########.fr        #
+#    Updated: 2023/07/25 15:15:00 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= 	template
+NAME			= 	array
 CXX				= 	c++
 RM				= 	rm -rf
 MKDIR			= 	mkdir -p

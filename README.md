@@ -13,7 +13,7 @@ int max(int x, int y)
 	return (x >= y ? x : y); //Ternary operator
 }
 
-template<typname T>
+template<typename T>
 T max(T x, T y)
 {
 	return (x >= y ? x : y);
@@ -65,4 +65,6 @@ T max(T x, T y)
 		public:
 			vertex(T const )
 	}
+
+**Ex02**
 
