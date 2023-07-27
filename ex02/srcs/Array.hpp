@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:33:29 by plau              #+#    #+#             */
-/*   Updated: 2023/07/26 16:19:45 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/27 12:57:40 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <cstddef>
 #include <iostream>
+#include "color.hpp"
 
 template<typename T>
 class Array
@@ -53,16 +54,31 @@ class Array
 		{
 			_dynamicArray = new T[n];
 		};
-
-		/* Member function */
-		int size() const
+		
+		T &operator[](unsigned int i)
 		{
-			return _arraySize;
+			if (i < 0 || i >= this->size())
+				throw Array::IndexOutOfRangeException();
+			return (this->_dynamicArray[i]);
+		}
+		unsigned int size() const
+		{
+			return (_arraySize);
 		}
 		
+		/* Exception class */
+		class IndexOutOfRangeException : public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+					return ("Index out of range");
+				}
+		};
+		
 	private:
-		T			*_dynamicArray; //pointer to dynamically allocated array
-		size_t		_arraySize;
+		T				*_dynamicArray; //pointer to dynamically allocated array
+		unsigned int	_arraySize;
 };
 
 #endif
