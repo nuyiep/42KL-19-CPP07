@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:33:19 by plau              #+#    #+#             */
-/*   Updated: 2023/07/27 21:06:55 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/27 21:34:39 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	int j = 10;
 	for (unsigned int i = 0; i < threeElementArray.size(); i++)
 	{
-		threeElementArray[i] = j;
+		threeElementArray[i] = j; //comment this to test empty array
 		j = j + 10;
 	}
 	std::cout << "Three element array size: " << threeElementArray.size() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:33:29 by plau              #+#    #+#             */
-/*   Updated: 2023/07/27 21:07:38 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/27 21:33:56 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Array
 {
 	public:
 		/* Orthodox canonical form */
-		Array() : _dynamicArray(NULL), _arraySize(0)
+		Array() : _dynamicArray(new T[0]), _arraySize(0)
 		{
 		};
 		~Array()
@@ -31,7 +31,7 @@ class Array
 				delete[] _dynamicArray;
 		};
 		/* copy constructor - deep copy */
-		Array(const Array &src) :_dynamicArray(NULL), _arraySize(src._arraySize)
+		Array(const Array &src) :_arraySize(src._arraySize)
 		{
 			_dynamicArray = new T[_arraySize]; //deep copy
 			// _dynamicArray = src._dynamicArray; //shallow copy
