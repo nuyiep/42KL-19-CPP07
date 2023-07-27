@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:33:29 by plau              #+#    #+#             */
-/*   Updated: 2023/07/27 12:57:40 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/27 21:07:38 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ class Array
 		/* copy constructor - deep copy */
 		Array(const Array &src) :_dynamicArray(NULL), _arraySize(src._arraySize)
 		{
-			_dynamicArray = new T[_arraySize];
-			for (int i = 0; i < _arraySize; i++)
+			_dynamicArray = new T[_arraySize]; //deep copy
+			// _dynamicArray = src._dynamicArray; //shallow copy
+			for (unsigned int i = 0; i < _arraySize; i++)
 				_dynamicArray[i] = src._dynamicArray[i];
 		}
 		/* copy assignment- deep copy */
@@ -43,8 +44,9 @@ class Array
 			if (_dynamicArray)
 				delete[] _dynamicArray;
 			_arraySize = src._arraySize;
-			_dynamicArray = new T[_arraySize];
-			for (int i = 0; i < _arraySize; i++)
+			_dynamicArray = new T[_arraySize]; //deep copy
+			// _dynamicArray = src._dynamicArray; //shallow copy
+			for (unsigned int i = 0; i < _arraySize; i++)
 				_dynamicArray[i] = src._dynamicArray[i];
 			return (*this);
 		}
