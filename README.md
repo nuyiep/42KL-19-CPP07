@@ -65,6 +65,3 @@ T max(T x, T y)
 		public:
 			vertex(T const )
 	}
-
-**Ex02**
-
