@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:33:19 by plau              #+#    #+#             */
-/*   Updated: 2023/07/27 21:34:39 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/28 15:29:15 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main()
 	std::cout << BOLD_GREEN << "\n******* Default constructor test *******\n" << RESET << std::endl;
 	Array<int>emptyArray;
 	std::cout << "Empty array size: " << emptyArray.size() << std::endl;
+	// std::cout << "Empty array elements: " << emptyArray[0] << std::endl;
 	
 	std::cout << BOLD_GREEN << "\n******* Int constructor test *******\n" << RESET << std::endl;
 	Array<int> threeElementArray(3);
@@ -29,11 +30,11 @@ int main()
 		j = j + 10;
 	}
 	std::cout << "Three element array size: " << threeElementArray.size() << std::endl;
-
-	std::cout << BOLD_GREEN << "\n******* copy constructor test (deep copy) *******\n" << RESET << std::endl;
 	std::cout << "threeElementArray[0]: " << threeElementArray[0] << std::endl;
 	std::cout << "threeElementArray[1]: " << threeElementArray[1] << std::endl;
 	std::cout << "threeElementArray[2]: " << threeElementArray[2] << std::endl;
+
+	std::cout << BOLD_GREEN << "\n******* Assignment operator test - (deep copy) *******\n" << RESET << std::endl;
 	Array <int> copyOfThreeElementArray(3);
 	copyOfThreeElementArray = threeElementArray;
 	std::cout << "copyOfThreeElementArray[0]: " << copyOfThreeElementArray[0] << std::endl;
@@ -49,7 +50,7 @@ int main()
 	for (unsigned int i = 0; i < copyOfThreeElementArray.size(); i++)
 		std::cout << "copyOfThreeElementArray" << "[" << i << "]:" << copyOfThreeElementArray[i] << std::endl;
 	
-	std::cout << BOLD_GREEN << "\n******* copy constructor test (deep copy) *******\n" << RESET << std::endl;
+	std::cout << BOLD_GREEN << "\n******* Copy constructor test (deep copy) *******\n" << RESET << std::endl;
 	Array <std::string>fiveElementArray(5);// = {"Christopher", "Nolan", "is", "a", "director"};
 	fiveElementArray[0] = "Christopher";
 	fiveElementArray[1] = "Nolan";
@@ -65,7 +66,6 @@ int main()
 	fiveElementArray[0] = "Pei Yun";
 	std::cout << "copyConstructor[0]" << copyConstructor[0] << std::endl;
 	
-
 	std::cout << BOLD_GREEN << "\n******* [] operator test *******\n" << RESET << std::endl;
 	std::cout << "threeElementArray[2]: " << threeElementArray[1] << std::endl;
 	

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_own.cpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 15:35:48 by plau              #+#    #+#             */
-/*   Updated: 2023/07/25 13:38:10 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/28 14:55:18 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ int main()
 		int a = 2;
 		int b = 3;
 		::swap( a, b );
+		std::cout << std::endl << "*********** Swap (Int) ***********" << std::endl;
 		std::cout << "a = " << a << ", b = " << b << std::endl;
 		std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 		std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+		std::cout << std::endl << "*********** Swap (string) ***********" << std::endl;
 		std::string c = "chaine1";
-		std::string d = "chaine2";
+		std::string d = "dhaine2";
 		::swap(c, d);
 		std::cout << "c = " << c << ", d = " << d << std::endl;
 		std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;

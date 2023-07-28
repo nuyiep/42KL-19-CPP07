@@ -6,12 +6,12 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 15:36:13 by plau              #+#    #+#             */
-/*   Updated: 2023/07/27 14:48:26 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/28 14:50:04 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEMPLATE_HPP
-# define TEMPLATE_HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 #include <iostream>
 
@@ -27,7 +27,7 @@ void	swap(T& a, T& b)
 
 /* T& - the function returns a ref, not creating a copy
 		any changes made will also affect the other
-/*		allows you to modify the original values passed to the function */
+		allows you to modify the original values passed to the function */
 /* T& a, T& b: These two indicate that the function parameters a and b
 		 are references to objects of type T. By using references, 
 		 the function can directly modify the original objects 

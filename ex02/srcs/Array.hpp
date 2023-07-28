@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:33:29 by plau              #+#    #+#             */
-/*   Updated: 2023/07/27 21:33:56 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/28 15:34:58 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ class Array
 {
 	public:
 		/* Orthodox canonical form */
-		Array() : _dynamicArray(new T[0]), _arraySize(0)
+		//_dynamicArray(NULL) also can- empty array with no allocated memory and no elements
+		//_dynamicArray(new T[0]) - allocate memory for no elements
+		//						  - pointer is valid but dereferencing it will lead to
+		//							undefined behaviour 
+		Array() : _dynamicArray(NULL), _arraySize(0)
+		// Array() : _dynamicArray(new T[0]), _arraySize(0)
 		{
 		};
 		~Array()
@@ -48,6 +53,8 @@ class Array
 			// _dynamicArray = src._dynamicArray; //shallow copy
 			for (unsigned int i = 0; i < _arraySize; i++)
 				_dynamicArray[i] = src._dynamicArray[i];
+				// _dynamicArray[i] = src[i]; 
+				//because i have overloaded [] so using src[i] is ok- not really
 			return (*this);
 		}
 		
