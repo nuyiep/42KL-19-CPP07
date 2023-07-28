@@ -70,4 +70,3 @@ T max(T x, T y)
 
 	copy constructor
 	When you use the shallow copy in your copy constructor, by simply assigning the pointer src._dynamicArray to _dynamicArray, both arrays (in the source and the destination objects) will end up pointing to the same memory location. This means that when one object is destroyed (e.g., when it goes out of scope), it will deallocate the memory it is pointing to using delete[]. However, when the second object is also destroyed, it will again try to deallocate the same memory location (since it's pointing to the same memory address), which leads to a "pointer being freed was not allocated" error.
-
