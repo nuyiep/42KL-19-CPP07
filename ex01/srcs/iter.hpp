@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:43:42 by plau              #+#    #+#             */
-/*   Updated: 2023/07/25 14:45:00 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/29 19:28:49 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ITER_HPP
 
 #include <iostream>
+#include "color.hpp"
 
 template<typename T>
 void	iter(T *arrayA, int length, void(func)(T &ref))

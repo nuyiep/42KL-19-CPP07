@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:43:24 by plau              #+#    #+#             */
-/*   Updated: 2023/07/25 15:11:24 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/29 19:33:43 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,39 @@ int main()
 {
 	{
 		/* String array */
-		std::cout << std::endl << "********** String Array Test **********" << std::endl; 
+		std::cout << BOLD_GREEN << std::endl << "********** String Array Test **********" << RESET << std::endl; 
 		std::string	stringArray[3] = {"Oppenheimer", "Christopher", "Nolan"};
-		iter(stringArray, 3, print);
+		int x = -1;
+		x = sizeof(stringArray) / sizeof(stringArray[0]);
+		std::cout << BOLD_GREEN <<  "Number of elements in stringArray: " << RESET << x << std::endl;
+		iter(stringArray, x, print);
 		
 		/* Int array */
-		std::cout << std::endl << "********** Int Array Test **********" << std::endl; 
+		std::cout << BOLD_GREEN << std::endl << "********** Int Array Test **********" << RESET << std::endl; 
 		int arrayB[] = {1, 2, 3, 4};
-		iter(arrayB, 4, print);
+		int y = -1;
+		y = sizeof(arrayB) / sizeof(arrayB[0]);
+		std::cout << BOLD_GREEN <<  "Number of elements in arrayB: " << RESET << y << std::endl;
+		iter(arrayB, y, print);
 
 		/* Double array */
-		std::cout << std::endl << "********** Double Array Test **********" << std::endl; 
+		std::cout << BOLD_GREEN << std::endl << "********** Double Array Test **********" << RESET << std::endl; 
 		double arrayC[] = {1.1, 2.22, 3.333, 4.4444};
-		iter(arrayC, 4, print);
+		int p = -1;
+		p = sizeof(arrayC) / sizeof(arrayC[0]);
+		std::cout << BOLD_GREEN <<  "Number of elements in arrayC: " << RESET << p << std::endl;
+		iter(arrayC, p, print);
 
 		/* Char* array */
-		std::cout << std::endl << "********** Char* Array Test **********" << std::endl; 
+		std::cout << BOLD_GREEN << std::endl << "********** Char* Array Test **********" << RESET << std::endl; 
 		char arrayD[] = "YO";
-		iter(arrayD, 2, print);
+		int z = -1;
+		z = strlen(arrayD);
+		std::cout << BOLD_GREEN << "Number of elements in arrayD: " << z << RESET << std::endl;
+		iter(arrayD, z, print);
 	}
 	{
-		std::cout << std::endl << "********** Eval Test **********" << std::endl; 	
+		std::cout << BOLD_GREEN << std::endl << "********** Eval Test **********" << RESET << std::endl; 	
 		int tab[] = { 0, 1, 2, 3, 4 }; // <--- I never understood why you can't write int[] tab. Wouldn't that make more sense?
 		Awesome tab2[5];
 		iter( tab, 5, print );
