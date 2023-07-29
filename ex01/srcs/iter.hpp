@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:43:42 by plau              #+#    #+#             */
-/*   Updated: 2023/07/29 19:28:49 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/29 19:39:41 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "color.hpp"
+#include <vector>
 
 template<typename T>
 void	iter(T *arrayA, int length, void(func)(T &ref))

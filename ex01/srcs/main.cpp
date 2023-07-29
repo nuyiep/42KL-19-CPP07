@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:43:24 by plau              #+#    #+#             */
-/*   Updated: 2023/07/29 19:33:43 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/29 19:48:30 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,16 @@ int main()
 		z = strlen(arrayD);
 		std::cout << BOLD_GREEN << "Number of elements in arrayD: " << z << RESET << std::endl;
 		iter(arrayD, z, print);
+	}
+	{
+		std::cout << BOLD_MAGENTA << std::endl << "********** Test (using c11) **********" << RESET << std::endl; 	
+		std::vector<int> myArray = {1, 2, 3, 4, 5};
+		int i = -1;
+		i = myArray.size();
+		std::cout << BOLD_MAGENTA << "Array size using vector: " << i << RESET << std::endl;
+		/* Opps this won't work because it's a vector */
+		/* (T* array v std::vector<int> - they are different type */
+		//iter(myArray, i, print);
 	}
 	{
 		std::cout << BOLD_GREEN << std::endl << "********** Eval Test **********" << RESET << std::endl; 	
