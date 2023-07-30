@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:33:29 by plau              #+#    #+#             */
-/*   Updated: 2023/07/28 15:34:58 by plau             ###   ########.fr       */
+/*   Updated: 2023/07/30 12:05:21 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,10 @@ class Array
 			_dynamicArray = new T[_arraySize]; //deep copy
 			// _dynamicArray = src._dynamicArray; //shallow copy
 			for (unsigned int i = 0; i < _arraySize; i++)
-				_dynamicArray[i] = src._dynamicArray[i];
-				// _dynamicArray[i] = src[i]; 
-				//because i have overloaded [] so using src[i] is ok- not really
+				// _dynamicArray[i] = src._dynamicArray[i];
+				_dynamicArray[i] = src[i]; 
+				//can just use src[i] because we have [] overload function
+				// but need to add const behind the [] function because this return a const
 			return (*this);
 		}
 		
@@ -64,7 +65,7 @@ class Array
 			_dynamicArray = new T[n];
 		};
 		
-		T &operator[](unsigned int i)
+		T &operator[](unsigned int i) const
 		{
 			if (i < 0 || i >= this->size())
 				throw Array::IndexOutOfRangeException();
